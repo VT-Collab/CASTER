@@ -1,0 +1,57 @@
+scene_num: ???
+task_name: ???
+cf_index: 1
+scene_dir: dataset/scene_${scene_num}
+method: feature  # feature, trajectory, or replay
+
+demo: null  # Demo number or exact directory name; prompt when unset.
+execute: false
+
+trajectory:
+  source_hz: 60.0
+  require_feasible: true
+
+grasp:
+  close_command: c
+  close_settle_seconds: 1.0
+  open_command: o
+  open_settle_seconds: 1.0
+  release_at_end: false
+  minimum_tcp_z: 0.01
+  speed_multiplier: 2.0
+  tracking_abort_error: 0.70
+
+network:
+  bind_address: 172.16.0.3
+  robot_port: 8080
+  gripper_port: 8081
+
+control:
+  # The socket accepts qdot, so position targets use bounded feedback control.
+  position_gain: 2.0
+  velocity_limit: 0.50
+  cartesian_velocity_limit: 0.50
+  playback_rate: 2.0
+  automatic_slowdown: true
+  speed_fraction: 0.8
+  start_tolerance: 0.10
+  tracking_abort_error: 0.35
+  minimum_tcp_z: 0.02
+  move_to_start: true
+  move_to_start_speed: 0.30
+
+camera:
+  enabled: true
+  address: tcp://127.0.0.1:5555
+  preview_port: 8082  # Browser preview; Ctrl+C in the terminal stops replay.
+  record: true
+  record_dir: ${scene_dir}/cf_${cf_index}_${task_name}/real_rollouts/${method}
+  record_fps: 30.0
+  record_post_seconds: 5.0
+
+hydra:
+  run:
+    dir: logs
+  job:
+    chdir: false
+  output_subdir: null

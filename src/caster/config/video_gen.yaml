@@ -1,0 +1,28 @@
+defaults:
+  - video_gen_prompt: ???
+  - llm_prompt@validation: validate_video
+  - _self_
+
+model_id: hunyuanvideo-community/HunyuanVideo-1.5-Diffusers-480p_i2v_step_distilled
+scene_num: ???
+image_path: dataset/scene_${scene_num}/assets/rgb.png
+output_dir: dataset/scene_${scene_num}/${hydra:runtime.choices.video_gen_prompt}
+num_frames: 121
+num_inference_steps: 12
+fps: 24
+seeds: [1]
+
+hydra:
+  job_logging:
+    loggers:
+      httpx:
+        level: WARNING
+      httpcore:
+        level: WARNING
+      huggingface_hub:
+        level: WARNING
+  run:
+    dir: logs
+  job:
+    chdir: false
+  output_subdir: null

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="CASTER: Formalizing Zero-Shot Manipulation from Synthetic Videos as Constrained Optimization">
+  <meta name="keywords" content="Robot Manipulation, Video Generation, Constrained Optimization">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CASTER: Formalizing Zero-Shot Manipulation from Synthetic Videos as Constrained Optimization</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<section id="landing-hero" class="hero">
+  <video class="landing-background" autoplay loop muted playsinline preload="auto" aria-hidden="true">
+    <source src="./static/resources/intro-background.mp4" type="video/mp4">
+  </video>
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <div class="landing-title-panel">
+            <h1 class="title publication-ti\tle">
+              <span class="caster-lockup">
+                <span class="caster-wordmark-stack">
+                  <span class="caster-echo caster-echo-3" aria-hidden="true">CASTER</span>
+                  <span class="caster-echo caster-echo-2" aria-hidden="true">CASTER</span>
+                  <span class="caster-echo caster-echo-1" aria-hidden="true">CASTER</span>
+                  <span class="caster-wordmark">CASTER</span>
+                </span>
+              </span>
+              <span class="publication-title-rest">
+                Formalizing Zero-Shot Manipulation<br>
+                from Synthetic Videos as Constrained Optimization
+              </span>
+            </h1>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Anonymous Authors</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+              <span class="link-block">
+                <a href="./static/resources/ICRA_CASTER_2026.pdf" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fas fa-file-pdf" aria-hidden="true"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="#" aria-disabled="true" class="external-link button is-normal is-rounded is-dark is-placeholder">
+                  <span class="icon">
+                    <i class="ai ai-arxiv" aria-hidden="true"></i>
+                  </span>
+                  <span>arXiv (coming soon)</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://youtu.be/1Ta4l1Fhoy4" target="_blank" rel="noopener noreferrer" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-youtube" aria-hidden="true"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://github.com/VT-Collab/CASTER" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-github" aria-hidden="true"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <div class="content">
+            <h2 class="subtitle has-text-centered" style="font-size: 1.4rem;">
+              <strong><i>Transferring video generation is a constrained optimization problem. The synthetic video seeds the search, which should maximize trajectory feature alignment while maintaining semantic and feasibility constraints.</i></strong>
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+            Prior research on learning from humans often requires real human demonstrations. But advances in video generation models offer a new paradigm: we can now prompt these generators to make synthetic videos of the task. On the plus side, these synthetic videos take place in the robot&rsquo;s current environment and do not require actual human teaching. However, while the generated videos appear to show plausible motions, they lack both physical consistency and robot grounding, and thus the robot cannot directly roll out the trajectory shown by the video. In this paper, we seek to formalize the process of going from synthetic video generation to real-world robot trajectories for zero-shot manipulation tasks. We recognize that this problem is an instance of <b>constrained optimization</b>. The object trajectories extracted from the synthetic video provide an initial guess at the correct motion, and the robot must refine these trajectories (for instance, within a digital twin) while enforcing physical <b>feasibility and semantic consistency</b>. Our optimization-based formalism provides insights into the video generation properties necessary for success. Specifically, we show that the video generation must probabilistically seed the search within a semantic basin of attraction where the trajectory can be locally modified without losing its task alignment. Our analysis further reveals that state-of-the-art approaches can be viewed as instances of our unified formalism with key simplifications. In our experiments, we remove these simplifications to more closely match the underlying optimization, leading to more robust zero-shot trajectories from synthetic videos and improving average task success by 34.1% compared to the best-performing baseline.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-max-desktop">
+          <h2 class="title is-3">Video</h2>
+          <div class="publication-video">
+            <video autoplay loop muted controls playsinline preload="metadata" aria-label="CASTER Video">
+              <source src="./static/resources/CASTER_vi.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section overview-section overview-intuition" aria-labelledby="overview-title">
+  <div class="container is-max-desktop">
+    <h2 id="overview-title" class="title is-2 has-text-centered">Overview</h2>
+    <figure class="overview-figure">
+      <video class="overview-video" autoplay loop muted playsinline controls preload="metadata"
+             aria-label="CASTER intuition animation">
+        <source src="./static/resources/intuition.mp4" type="video/mp4">
+      </video>
+      <figcaption class="content has-text-justified">
+        <p><strong>Beyond tracking a <span class="caster-accent">single trajectory</span>, video generation models allow us to sample <span class="caster-accent">multiple videos</span> and learn the essential task features they share.</strong></p>
+        <p>Synthetic videos need not be physically perfect. <strong class="caster-accent">CASTER</strong> uses them to seed a search for feasible robot motions that preserve the intended task.</p>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section overview-section" aria-labelledby="method-title">
+  <div class="container is-max-desktop">
+    <h2 id="method-title" class="title is-2 has-text-centered">Method</h2>
+    <figure class="overview-figure">
+      <video class="overview-video" autoplay loop muted playsinline controls preload="metadata"
+             aria-label="CASTER architecture overview animation">
+        <source src="./static/resources/architecture.mp4" type="video/mp4">
+      </video>
+      <figcaption class="content has-text-justified">
+        <p>
+          Overview of <strong class="caster-accent">CASTER</strong>. (Top Left) Given an initial RGB-D observation and a task prompt, we (Top) generate synthetic videos of a human performing that task in the current environment and (Bottom Left) build a digital twin of the scene. From the synthetic videos we extract the object trajectories, which then serve as initial guesses for trajectory optimization within the digital twin. (Bottom) The trajectories extracted from synthetic videos do not need to be perfect: instead, they must lie within a semantic basin of attraction where the optimization can locally modify the trajectory shape without removing its semantic meaning. (Bottom Right) We perform constrained optimization so that the robot&rsquo;s actions in the digital twin cause the objects to move similarly to their video trajectories, while enforcing kinematic constraints so that the output can be directly executed by the real robot.
+        </p>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section pointcloud-section" aria-label="Interactive task viewer">
+  <div class="container is-max-desktop">
+    <h2 class="title is-2 has-text-centered">Experiments</h2>
+    <div id="pointcloud-gallery" class="pointcloud-gallery" aria-live="polite">
+      <div class="gallery-loading" role="status">
+        <span class="viewer-spinner" aria-hidden="true"></span>
+        <span>Preparing task viewers&hellip;</span>
+      </div>
+    </div>
+
+    <noscript>
+      <p class="viewer-noscript">Enable JavaScript to use the interactive point-cloud viewer.</p>
+    </noscript>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link" href="./static/resources/ICRA_CASTER_2026.pdf" aria-label="Paper PDF">
+        <i class="fas fa-file-pdf" aria-hidden="true"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/VT-Collab/CASTER" title="CASTER code" aria-label="CASTER code">
+        <i class="fab fa-github" aria-hidden="true"></i>
+      </a>
+      <p>Page template borrowed from <a href="https://human2robot.github.io/"><span class="dnerf">Whirl</span></a>, <a href="https://nerfies.github.io"><span class="dnerf">Nerfies</span></a>, <a href="https://energy-locomotion.github.io/"><span class="dnerf">Energy Locomotion</span></a> and <a href="https://robotic-telekinesis.github.io/"><span class="dnerf">Robotic Telekinesis</span></a>.</p>
+    </div>
+  </div>
+</footer>
+
+<script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+    }
+  }
+</script>
+<script type="module" src="./static/js/pointcloud-viewer.js"></script>
+</body>
+</html>

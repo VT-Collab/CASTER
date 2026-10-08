@@ -1,0 +1,75 @@
+# Search bounds relative to the post-grasp pose (metres and radians).
+position_search_radius: 0.40
+rotation_search_radius: 3.141592653589793
+
+collision:
+  enabled: true
+  barrier_weight: 5000.0
+  force_threshold: 1.0
+  force_scale: 10.0
+
+cost_terms:
+  trajectory:
+    enabled: true
+    weight: 4.0
+  endpoint:
+    enabled: true
+    weight: 10.0
+  displacement:
+    enabled: true
+    weight: 1.0
+  obstacle:
+    enabled: true
+    weight: 5.0
+  position_travel:
+    enabled: true
+    weight: 1.0
+  speed:
+    enabled: true
+    weight: 5.0
+  workspace_constraint:
+    enabled: true
+    weight: 5000.0
+
+simulated_arm_collision_enabled: true
+simulated_arm_link_names:
+  - panda_link3
+  - panda_link4
+  - panda_link5
+  - panda_link6
+  - panda_link7
+simulated_arm_segment_radii: [0.085, 0.080, 0.075, 0.080]
+simulated_arm_samples_per_segment: 7
+
+position_loss_weight: 1.0
+orientation_loss_weight: 0.1
+position_worst_fraction: 0.10
+position_worst_weight: 0.50
+
+minimum_tcp_z: 0.02
+minimum_tcp_z_ramp_steps: 5
+tcp_z_feasibility_tolerance: 0.002
+maximum_tcp_speed: 0.60
+enforce_speed_feasibility: false
+control_timestep: 0.016666667
+position_travel_scale: 0.10
+
+joint_lower_limits: [-2.8973, -1.7628, -2.8973, -3.0718, -2.8973, -0.0175, -2.8973]
+joint_upper_limits: [2.8973, 1.7628, 2.8973, -0.0698, 2.8973, 3.7525, 2.8973]
+
+feasible_dedup_position_tolerance: 0.02
+feasible_dedup_rotation_tolerance: 0.130899694
+feasible_dedup_joint_tolerance: 0.15
+feasibility_tolerance: 1.0e-6
+
+tcp_radius: 0.12
+safety_margin: 0.03
+obstacle_temperature: 0.01
+obstacle_distance_backend: grid
+obstacle_grid_resolution: 0.003
+obstacle_grid_padding: null
+obstacle_grid_temperature_tail: 8.0
+obstacle_max_grid_cells: 30000000
+obstacle_query_workers: 8
+
+post_grasp_settle_steps: 15

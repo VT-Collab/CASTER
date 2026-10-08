@@ -1,0 +1,62 @@
+# Isaac Sim 6.0.1 / Isaac Lab 3.x. One environment for demonstration playback.
+robot_base_pos:
+- 0.0
+- 0.0
+- 1.05
+table_translation:
+- 0.55
+- 0.0
+- 1.05
+env_spacing: 3.0
+sim_dt: 0.016666667
+usd_dir: outputs/sim_usd
+num_envs: 1
+object_mass_kg: 0.08
+collision_approx: convexDecomposition
+static_friction: 4.0
+dynamic_friction: 3.0
+torsional_patch_radius: 0.007
+min_torsional_patch_radius: 0.002
+arm_stiffness_scale: 4.0
+gripper_stiffness: 4000.0
+gripper_damping: 200.0
+gripper_effort_limit: 200.0
+gripper_velocity_limit: 0.2
+gripper_variant: umi
+umi_asset_dir: null
+table:
+  size:
+  - 1.8
+  - 1.4
+  - 0.06
+  top_color:
+  - 0.12
+  - 0.12
+  - 0.12
+  top_roughness: 1.0
+  leg_color:
+  - 0.12
+  - 0.13
+  - 0.14
+  leg_width: 0.055
+  leg_inset: 0.12
+camera:
+  prim_path: /World/recording_camera
+  width: 720
+  height: 400
+  pos:
+  - 2.2
+  - 1.5
+  - 2.5
+  rot:
+  - 0.52133
+  - 0.47772
+  - 0.47772
+  - 0.52133
+  data_types:
+  - rgb
+  record_fps: 30
+  video_filename: sim_render.mp4
+  save_dir: outputs/sim_videos
+  record_frequency: 2
+  enabled: true

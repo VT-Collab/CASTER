@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>CASTER simulation video renderer</title>
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+    }
+  }
+  </script>
+  <style>
+    html, body { margin: 0; background: #e8ece8; font: 14px sans-serif; }
+    #viewer, .simulation-player, .simulation-stage { width: 848px; }
+    .simulation-stage { height: 480px; position: relative; overflow: hidden; }
+    .simulation-stage canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .simulation-placeholder, .simulation-transport, figcaption,
+    .canvas-play-button, .simulation-hint { display: none !important; }
+  </style>
+</head>
+<body>
+  <figure id="viewer"></figure>
+  <script type="module">
+    import { SimulationViewer } from '/static/js/simulation-viewer.js';
+
+    const FPS = 30;
+    const viewer = new SimulationViewer(document.querySelector('#viewer'), () => {}, {
+      preserveDrawingBuffer: true,
+      pixelRatio: 1,
+      assetRoot: '/static/resources/simulation/',
+    });
+
+    const post = async (path, body = new Uint8Array()) => {
+      const response = await fetch(path, { method: 'POST', body });
+      if (!response.ok) throw new Error(`${path}: ${response.status}`);
+    };
+
+    const canvasBlob = (canvas) => new Promise((resolve, reject) => {
+      canvas.toBlob((blob) => blob ? resolve(blob) : reject(new Error('Canvas capture failed')),
+        'image/jpeg', 0.94);
+    });
+
+    try {
+      const pointcloud = await fetch('/static/resources/pointcloud/manifest.json').then((r) => r.json());
+      const requested = new Set((new URLSearchParams(location.search).get('only') || '')
+        .split(',').filter(Boolean));
+      const examples = requested.size
+        ? pointcloud.examples.filter((example) => requested.has(example.id))
+        : pointcloud.examples;
+      for (const example of examples) {
+        await viewer.load(example.id, example.camera);
+        if (!viewer.ready) {
+          throw new Error(`Simulation unavailable: ${example.id}: ${viewer.lastError?.stack || viewer.lastError || 'unknown error'}`);
+        }
+        const canvas = document.querySelector('.simulation-stage canvas');
+        const frameCount = Math.ceil(viewer.duration * FPS) + 1;
+        for (let frame = 0; frame < frameCount; frame += 1) {
+          viewer.seek(Math.min(frame / FPS, viewer.duration));
+          const blob = await canvasBlob(canvas);
+          const name = `frame-${String(frame).padStart(5, '0')}.jpg`;
+          await post(`/__render/frame/${example.id}/${name}`, blob);
+        }
+        await post(`/__render/scene-done/${example.id}`);
+      }
+      await post('/__render/all-done');
+      document.title = 'CASTER rendering complete';
+    } catch (error) {
+      console.error(error);
+      await post('/__render/error', new TextEncoder().encode(error.stack || String(error)));
+      document.title = 'CASTER rendering failed';
+    }
+  </script>
+</body>
+</html>

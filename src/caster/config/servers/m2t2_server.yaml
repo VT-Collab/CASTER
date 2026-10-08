@@ -1,0 +1,11 @@
+host: localhost
+port: 29006
+m2t2_root: src/M2T2
+checkpoint: null  # Download upstream generic weights when unset.
+
+hydra:
+  run:
+    dir: logs
+  job:
+    chdir: false
+  output_subdir: null

@@ -1,0 +1,12 @@
+{
+  "left_visual_vertices": 4362,
+  "left_visual_faces": 8820,
+  "collision_components_per_finger": 6,
+  "left_mass_kg": 0.0683354855787067,
+  "left_center_of_mass_m": [
+    1.5252526877893246e-11,
+    0.0175833717131048,
+    0.055884261853425626
+  ],
+  "hand_to_tcp_m": 0.19490000000000002
+}

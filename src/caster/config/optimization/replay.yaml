@@ -1,0 +1,27 @@
+# @package _global_
+defaults:
+  - /grasp
+  - _self_
+
+scene_num: ???
+task_name: ???
+cf_index: 1
+demo_indices: [1]  
+scene_dir: dataset/scene_${scene_num}
+output_path: null  
+server_address: tcp://localhost:15555
+server_timeout: 3600
+substeps: 1
+post_grasp_settle_steps: 15
+render: true
+grasp:
+  hover_distance: ${oc.select:grasp_presets.${task_name}.hover_distance,${grasp_presets.default.hover_distance}}
+  depth_offset: ${oc.select:grasp_presets.${task_name}.depth_offset,${grasp_presets.default.depth_offset}}
+  height_offset: ${oc.select:grasp_presets.${task_name}.height_offset,${grasp_presets.default.height_offset}}
+  execute_release: ${oc.select:grasp_presets.${task_name}.execute_release,${grasp_presets.default.execute_release}}
+hydra:
+  run:
+    dir: logs
+  job:
+    chdir: false
+  output_subdir: null

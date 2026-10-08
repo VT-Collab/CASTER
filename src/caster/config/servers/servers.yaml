@@ -1,0 +1,8 @@
+da3_port: 29002
+
+hydra:
+  run:
+    dir: logs
+  job:
+    chdir: false
+  output_subdir: null

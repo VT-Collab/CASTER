@@ -1,0 +1,36 @@
+# @package _global_
+defaults:
+  - /grasp
+  - _self_
+
+cost_function: feature  # feature or trajectory
+scene_num: ???
+task_name: ???
+cf_index: 1
+demo_indices: [1]
+scene_dir: dataset/scene_${scene_num}
+server_address: tcp://localhost:15555
+server_timeout: 3600
+render: true
+
+optimizer:
+  _target_: caster.optimization.optimizer.TrajectoryOptimizer
+  checkpoint_policy: feasible_first
+  K_pos: 15
+  K_rot: 5
+  cost_function:
+    server_address: ${server_address}
+    server_timeout: ${server_timeout}
+    render: ${render}
+    m2t2_hover_distance: ${oc.select:grasp_presets.${task_name}.hover_distance,${grasp_presets.default.hover_distance}}
+    m2t2_grasp_depth_offset: ${oc.select:grasp_presets.${task_name}.depth_offset,${grasp_presets.default.depth_offset}}
+    m2t2_grasp_height_offset: ${oc.select:grasp_presets.${task_name}.height_offset,${grasp_presets.default.height_offset}}
+    execute_release: ${oc.select:grasp_presets.${task_name}.execute_release,${grasp_presets.default.execute_release}}
+    evaluate_release: ${optimizer.cost_function.execute_release}
+
+hydra:
+  run:
+    dir: logs
+  job:
+    chdir: false
+  output_subdir: null

@@ -1,0 +1,67 @@
+grasp_presets:
+  default:
+    hover_distance: 0.27
+    depth_offset: 0.01
+    height_offset: 0.0
+    execute_release: true
+  basket:
+    hover_distance: 0.12
+    depth_offset: 0.00
+    height_offset: 0.0
+    execute_release: true
+  block:
+    hover_distance: 0.12
+    depth_offset: 0.00
+    height_offset: 0.0
+    execute_release: true
+  bowl:
+    hover_distance: 0.12
+    depth_offset: 0.00
+    height_offset: 0.0
+    execute_release: true
+  close_lid:
+    hover_distance: 0.12
+    depth_offset: 0.0
+    height_offset: 0.0
+    execute_release: true
+  cover_bucket:
+    hover_distance: 0.12
+    depth_offset: 0.0
+    height_offset: 0.0
+    execute_release: true
+  draw:
+    hover_distance: 0.12
+    depth_offset: 0.0
+    height_offset: 0.0
+    execute_release: false
+  kettle:
+    hover_distance: 0.12
+    depth_offset: 0.00
+    height_offset: 0.0
+    execute_release: false
+  move_banana_in_pan:
+    hover_distance: 0.27
+    depth_offset: 0.00
+    height_offset: 0.0
+    execute_release: true
+  orange:
+    hover_distance: 0.6
+    depth_offset: 0.0
+    height_offset: 0.0
+    execute_release: true
+  pick_up_banana:
+    hover_distance: 0.27
+    depth_offset: 0.01
+    height_offset: 0.0
+    execute_release: false
+  pour:
+    hover_distance: 0.12
+    depth_offset: 0.00
+    height_offset: 0.00
+    execute_release: false
+  toast:
+    hover_distance: 0.2
+    depth_offset: 0.0
+    height_offset: 0.0
+    execute_release: true
+

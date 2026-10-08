@@ -1,0 +1,17 @@
+scene_num: ???
+start_demo: 1
+port: 8080
+camera_intrinsics: src/caster/config/camera_intrinsics.yaml
+max_points: 20000
+point_size: 0.003
+track_point_size: 0.006
+robot_axes_length: 0.15
+robot_axes_radius: 0.006
+object_axes_length: 0.06
+object_axes_radius: 0.003
+hydra:
+  run:
+    dir: logs
+  job:
+    chdir: false
+  output_subdir: null

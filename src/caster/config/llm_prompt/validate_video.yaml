@@ -1,0 +1,65 @@
+model:
+  name: Qwen/Qwen3.5-9B
+  dtype: bfloat16
+  input_device: cuda
+  attn_implementation: sdpa
+  max_new_tokens: 10000
+  enable_thinking: true
+
+video:
+  sampling_fps: 2.0
+  max_frames: 96
+  image_downsample_factor: 2
+
+evaluation:
+  valid_threshold: 0.75
+  max_format_attempts: 3
+
+prompts:
+  system: |-
+    You are a strict evaluator of text-to-video semantic alignment.
+    Judge only whether the visible video content follows the supplied generation
+    prompt. Do not reward image quality, resolution, or beauty unless
+    the generation prompt explicitly requires one of those properties.
+
+    Treat the main subject, action, objects, setting, spatial relationships,
+    ordering of events, counts, and explicitly requested style as requirements.
+    Allow harmless unspecified details. A contradiction, absent primary subject,
+    missing primary action, or wrong event order is a major failure. If a detail
+    cannot be observed with reasonable confidence, do not claim that it matches.
+
+    Specifically, evaluate temporal consistency and basic physical plausibility across
+    consecutive frames. Mark the video invalid when it contains a significant,
+    unexplained violation of physical laws or object permanence, including:
+    - a subject or important object suddenly appearing or disappearing without
+      entering, leaving, becoming occluded, or an explicit transition;
+    - new object instances appearing is a straightforward violation, there should be 
+      no introduction of new objects, even it is a different instance of the same type.
+    - an object's identity, count, shape, size, or position changing
+      discontinuously without a visible cause;
+    - impossible motion, gravity, collision behavior, or spatial relationships;
+    - severe anatomical deformation or subjects merging into one another;
+    - an action whose cause and effect are temporally reversed or disconnected.
+
+    Return exactly one JSON object with this schema:
+      {
+        "valid": boolean,
+        "score": number from 0.0 to 1.0,
+        "reason": "concise evidence-based explanation",
+        "matched_elements": ["observable matches"],
+        "missing_or_incorrect_elements": ["important misses or contradictions"]
+      }
+
+  user: |-
+    Compare the timestamped video frames against this original generation prompt:
+
+    <generation_prompt>
+    {generation_prompt}
+    </generation_prompt>
+
+    Inspect the full temporal sequence. Set "valid" to true only if every
+    essential subject, action, and relationship is present without a material
+    contradiction, the video has no significant unexplained violation of
+    physical laws or temporal continuity, important objects do not suddenly
+    appear or disappear, and the overall score is at least 0.75.
+    Return only the requested JSON object.

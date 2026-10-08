@@ -1,0 +1,29 @@
+defaults:
+  - video_gen_prompt: ???
+  - llm_prompt: infer_object_cf
+  - _self_
+
+scene_num: ???
+video_dir: dataset/scene_${scene_num}/${hydra:runtime.choices.video_gen_prompt}
+output_dir: dataset/scene_${scene_num}
+camera_intrinsics: src/caster/config/camera_intrinsics.yaml
+cf_index: 1
+valid_threshold: 0.75
+visualize: true
+da3_server_url: http://localhost:29002
+mask_server_url: http://localhost:29003
+trackcraft_server_url: http://localhost:29004
+server_timeout: 3600  # Seconds to wait for a local inference result.
+weighting:
+  variance_percentile: 0.80
+  weight_scale_divisor: 3.0
+  minimum_valid_samples: 2
+  trajectory_change_boost: 1.0
+  initial_weight_fraction: 0.15
+  initial_weight_start: 0.1
+hydra:
+  run:
+    dir: logs
+  job:
+    chdir: false
+  output_subdir: null

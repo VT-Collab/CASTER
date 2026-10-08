@@ -1,0 +1,38 @@
+prompt: |-
+  Given a task description and a list of available objects, identify the minimal set of pairwise geometric relations that must be controlled at some point for successful task execution.
+  A relation is essential only when successful completion requires controlling the target object's position or orientation relative to the reference object.
+  Do not include relations merely because two objects are mentioned, visible, or happen to move together.
+  Use only object names from the provided available_objects list. The target_object is the object whose state is being manipulated or constrained, and the reference_object defines the coordinate frame or spatial context.
+  This step only identifies which relation channels should be analyzed. Do not determine when the relation matters, its desired value, or its importance weight.
+  Return one constraint object for each essential object pair. If both position and orientation are essential for the same pair, include both in one relation list.
+  Return an empty list if no pairwise relation is required.
+
+input_format: |-
+  task_description: <string>
+  available_objects: <list of strings>
+
+output_format: |-
+  Return ONLY a raw valid JSON list. Each item must contain exactly:
+  - "target_object": an object name copied exactly from available_objects.
+  - "reference_object": a different object name copied exactly from available_objects.
+  - "relation": a list containing one or both of:
+    - "relative_position": the target's 3D position relative to the reference.
+    - "relative_orientation": the target's 3D orientation relative to the reference.
+  Either one or both can be omitted if not essential for the task.
+
+example: |-
+  Input:
+  task_description: "Place the mug on the plate."
+  available_objects: ["mug", "plate", "spoon"]
+
+  Output:
+  [{"target_object":"mug",
+    "reference_object":"plate",
+    "relation":["relative_position"]}]
+
+constraints: |-
+  Output must be a top-level valid JSON list with no markdown or explanatory text.
+  Do not use objects absent from available_objects.
+  Do not create self-relations.
+  Do not output duplicate or reversed duplicate object pairs.
+  Every relation list must be exactly ["relative_position"], ["relative_orientation"], or ["relative_position","relative_orientation"].

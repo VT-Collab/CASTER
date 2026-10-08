@@ -1,0 +1,11 @@
+connect: tcp://127.0.0.1:5555
+out: dataset
+c2r: ???  # Calibrated camera-to-robot transform; supply c2r=/path/to/C2R.npy.
+preview_port: 8082
+
+hydra:
+  run:
+    dir: logs
+  job:
+    chdir: false
+  output_subdir: null

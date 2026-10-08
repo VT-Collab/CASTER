@@ -1,0 +1,8 @@
+# Additional packages for the separately installed Isaac environment.
+# Keep Isaac's own Torch, NumPy, and Warp versions.
+pyzmq>=27
+omegaconf>=2.3
+opencv-python-headless>=4.8
+trimesh>=4
+scipy>=1.13
+imageio-ffmpeg>=0.6

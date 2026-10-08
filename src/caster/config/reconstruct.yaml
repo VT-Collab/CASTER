@@ -1,0 +1,57 @@
+scene_num: ???
+output_dir: null
+sam3d_server_addr: tcp://localhost:5561
+m2t2_server_url: http://localhost:29006
+server_timeout: 3600
+camera_intrinsics: src/caster/config/camera_intrinsics.yaml
+generate_masks: true
+generate_grasps: true
+grasp_table_aware: true
+gemini_model: gemini-robotics-er-2-preview
+detection_prompt: >-
+  Point to no more than 10 items in the image. The label returned should be an
+  identifying name for the object detected. Return JSON as
+  [{"point": [y, x], "label": "object name"}, ...]. Points are normalized to 0-1000.
+grasp_prompt: >-
+  You are a robotic grasp planning system. Identify the optimal visible 2D contact
+  point for grasping the '{object_name}'. Return exactly one point in [y, x] order,
+  with coordinates normalized to integers from 0 to 1000. If the object is a cup,
+  choose its handle. Return only valid JSON as
+  [{"point": [y, x], "label": "{object_name}"}].
+filter_phrases:
+  - robot
+  - arm
+  - surface
+  - frame
+  - gripper
+  - table
+  - tabletop
+  - background
+  - container
+  - box
+  - cable
+  - support
+  - curtain
+  - cloth
+  - power
+  - cord
+  - wall
+  - floor
+  - camera
+  - base
+  - light
+  - warning
+  - pole
+  - desk
+  - button
+  - joint
+  - fabric
+  - control
+  - end
+
+hydra:
+  run:
+    dir: logs
+  job:
+    chdir: false
+  output_subdir: null

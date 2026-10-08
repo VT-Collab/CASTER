@@ -1,0 +1,17 @@
+{
+  "format": "caster.real-video.v1",
+  "videos": {
+    "scene-8-demo-3": "scene-8-demo-3.mp4",
+    "scene-11-demo-9": "scene-11-demo-9.mp4",
+    "scene-12-demo-5": "scene-12-demo-5.mp4",
+    "scene-13-demo-10": "scene-13-demo-10.mp4",
+    "scene-14-demo-1": "scene-14-demo-1.mp4",
+    "scene-17-demo-4": "scene-17-demo-4.mp4",
+    "scene-19-demo-3": "scene-19-demo-3.mp4",
+    "scene-20-demo-1": "scene-20-demo-1.mp4",
+    "scene-22-demo-3": "scene-22-demo-3.mp4",
+    "scene-25-demo-9": "scene-25-demo-9.mp4",
+    "scene-26-demo-1": "scene-26-demo-1.mp4",
+    "scene-27-demo-8": "scene-27-demo-8.mp4"
+  }
+}

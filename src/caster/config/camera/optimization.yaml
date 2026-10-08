@@ -1,0 +1,4 @@
+# Legacy camera for the 1050-environment optimization scene.
+prim_path: /World/recording_camera
+pos: [2.2, 1.5, 2.5]
+rot: [0.52133, 0.47772, 0.47772, 0.52133]  # WXYZ
