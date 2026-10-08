@@ -12,7 +12,9 @@
 > Implementation of CASTER, a framework that extract task-relevant trajectory features from synthetic videos and finetune them in a digital twin with constrained optimization.
 
 
-https://github.com/user-attachments/assets/f31df753-1e19-4b65-b366-10534c4807ad
+
+https://github.com/user-attachments/assets/7cdc37f8-71ef-4e11-857c-0ee05947b315
+
 
 
 <video src="assets/CASTER_vi.mp4" autoplay loop muted playsinline controls width="100%"></video>
