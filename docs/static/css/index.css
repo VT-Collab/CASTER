@@ -156,12 +156,43 @@ body.landing-transition .landing-title-panel {
 }
 
 .publication-authors {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.25rem 1rem;
   font-family: 'Google Sans', sans-serif;
 }
 
 .author-block {
   display: inline-block;
   white-space: nowrap;
+}
+
+.publication-authors a,
+.publication-authors a:visited {
+  color: #ff9900;
+  font-weight: 400;
+  text-underline-offset: 0.18em;
+}
+
+.publication-authors a:hover,
+.publication-authors a:focus-visible {
+  color: #e85d04;
+  text-decoration: underline;
+}
+
+.publication-affiliations {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.25rem 1.25rem;
+  margin-top: 0.4rem;
+  font-family: 'Google Sans', sans-serif;
+  font-size: 1.125rem;
+}
+
+.affiliation-block {
+  display: inline-block;
 }
 
 .link-block a {
