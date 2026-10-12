@@ -1,6 +1,6 @@
 {
-  "format": "caster.pointcloud.v1",
-  "description": "Quantized, lazy-loaded point-cloud replays for the CASTER project page.",
+  "format": "caster.pointcloud.raw.v1",
+  "description": "Full-resolution source geometry and depth, with all source frames.",
   "examples": [
     {
       "id": "scene-8-demo-3",
@@ -9,9 +9,9 @@
       "seed": "2",
       "task": "move_banana_in_pan",
       "label": "Move Banana In Pan",
-      "data": "scene-8-demo-3.bin",
+      "data": "raw/scene-8-demo-3/scene.bin",
       "video": "scene-8-demo-3.mp4",
-      "bytes": 2174908,
+      "bytes": 23355560,
       "bounds": {
         "min": [
           -0.6438500881195068,
@@ -26,65 +26,197 @@
       },
       "frameIndices": [
         0,
+        1,
+        2,
+        3,
         4,
+        5,
+        6,
+        7,
         8,
+        9,
+        10,
+        11,
         12,
+        13,
+        14,
+        15,
         16,
+        17,
+        18,
+        19,
         20,
+        21,
+        22,
+        23,
         24,
+        25,
+        26,
+        27,
         28,
+        29,
+        30,
+        31,
         32,
+        33,
+        34,
+        35,
         36,
+        37,
+        38,
+        39,
         40,
+        41,
+        42,
+        43,
         44,
+        45,
+        46,
+        47,
         48,
+        49,
+        50,
+        51,
         52,
+        53,
+        54,
+        55,
         56,
+        57,
+        58,
+        59,
         60,
+        61,
+        62,
+        63,
         64,
+        65,
+        66,
+        67,
         68,
+        69,
+        70,
+        71,
         72,
+        73,
+        74,
+        75,
         76,
+        77,
+        78,
+        79,
         80,
+        81,
+        82,
+        83,
         84,
+        85,
+        86,
+        87,
         88,
+        89,
+        90,
+        91,
         92,
+        93,
+        94,
+        95,
         96,
+        97,
+        98,
+        99,
         100,
+        101,
+        102,
+        103,
         104,
+        105,
+        106,
+        107,
         108,
+        109,
+        110,
+        111,
         112,
+        113,
+        114,
+        115,
         116,
+        117,
+        118,
+        119,
         120
       ],
       "sourceFrameCount": 121,
       "sourceFps": 24,
       "scene": {
-        "pointCount": 35000,
+        "pointCount": 1512122,
         "position": {
           "offset": 0,
-          "bytes": 210000,
-          "dtype": "uint16"
+          "bytes": 18145464,
+          "dtype": "float32"
         },
         "color": {
-          "offset": 210000,
-          "bytes": 105000,
+          "offset": 18145464,
+          "bytes": 4536366,
           "dtype": "uint8"
         }
       },
       "videoCloud": {
-        "frameCount": 31,
-        "pointCount": 6357,
-        "position": {
-          "offset": 315000,
-          "bytes": 1182402,
-          "dtype": "uint16"
-        },
-        "color": {
-          "offset": 1497402,
-          "bytes": 591201,
-          "dtype": "uint8"
-        }
+        "frameCount": 121,
+        "pointCount": 407040,
+        "width": 848,
+        "height": 480,
+        "depthChunks": [
+          {
+            "startFrame": 0,
+            "frameCount": 16,
+            "data": "raw/scene-8-demo-3/depth-000.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 16,
+            "frameCount": 16,
+            "data": "raw/scene-8-demo-3/depth-016.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 32,
+            "frameCount": 16,
+            "data": "raw/scene-8-demo-3/depth-032.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 48,
+            "frameCount": 16,
+            "data": "raw/scene-8-demo-3/depth-048.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 64,
+            "frameCount": 16,
+            "data": "raw/scene-8-demo-3/depth-064.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 80,
+            "frameCount": 16,
+            "data": "raw/scene-8-demo-3/depth-080.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 96,
+            "frameCount": 16,
+            "data": "raw/scene-8-demo-3/depth-096.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 112,
+            "frameCount": 9,
+            "data": "raw/scene-8-demo-3/depth-112.bin",
+            "bytes": 14653440
+          }
+        ]
       },
       "tracks": [
         {
@@ -96,9 +228,9 @@
             40
           ],
           "position": {
-            "offset": 2088604,
-            "bytes": 29760,
-            "dtype": "uint16"
+            "offset": 22681832,
+            "bytes": 232320,
+            "dtype": "float32"
           }
         },
         {
@@ -110,9 +242,9 @@
             255
           ],
           "position": {
-            "offset": 2118364,
-            "bytes": 56544,
-            "dtype": "uint16"
+            "offset": 22914152,
+            "bytes": 441408,
+            "dtype": "float32"
           }
         }
       ],
@@ -151,7 +283,8 @@
           "width": 1920,
           "height": 1080
         }
-      }
+      },
+      "totalBytes": 220362920
     },
     {
       "id": "scene-11-demo-9",
@@ -160,9 +293,9 @@
       "seed": "10",
       "task": "place_block_in_basket",
       "label": "Place Block in Basket",
-      "data": "scene-11-demo-9.bin",
+      "data": "raw/scene-11-demo-9/scene.bin",
       "video": "scene-11-demo-9.mp4",
-      "bytes": 2242146,
+      "bytes": 23865268,
       "bounds": {
         "min": [
           -0.627508819103241,
@@ -177,65 +310,197 @@
       },
       "frameIndices": [
         0,
+        1,
+        2,
+        3,
         4,
+        5,
+        6,
+        7,
         8,
+        9,
+        10,
+        11,
         12,
+        13,
+        14,
+        15,
         16,
+        17,
+        18,
+        19,
         20,
+        21,
+        22,
+        23,
         24,
+        25,
+        26,
+        27,
         28,
+        29,
+        30,
+        31,
         32,
+        33,
+        34,
+        35,
         36,
+        37,
+        38,
+        39,
         40,
+        41,
+        42,
+        43,
         44,
+        45,
+        46,
+        47,
         48,
+        49,
+        50,
+        51,
         52,
+        53,
+        54,
+        55,
         56,
+        57,
+        58,
+        59,
         60,
+        61,
+        62,
+        63,
         64,
+        65,
+        66,
+        67,
         68,
+        69,
+        70,
+        71,
         72,
+        73,
+        74,
+        75,
         76,
+        77,
+        78,
+        79,
         80,
+        81,
+        82,
+        83,
         84,
+        85,
+        86,
+        87,
         88,
+        89,
+        90,
+        91,
         92,
+        93,
+        94,
+        95,
         96,
+        97,
+        98,
+        99,
         100,
+        101,
+        102,
+        103,
         104,
+        105,
+        106,
+        107,
         108,
+        109,
+        110,
+        111,
         112,
+        113,
+        114,
+        115,
         116,
+        117,
+        118,
+        119,
         120
       ],
       "sourceFrameCount": 121,
       "sourceFps": 24,
       "scene": {
-        "pointCount": 35000,
+        "pointCount": 1511545,
         "position": {
           "offset": 0,
-          "bytes": 210000,
-          "dtype": "uint16"
+          "bytes": 18138540,
+          "dtype": "float32"
         },
         "color": {
-          "offset": 210000,
-          "bytes": 105000,
+          "offset": 18138540,
+          "bytes": 4534635,
           "dtype": "uint8"
         }
       },
       "videoCloud": {
-        "frameCount": 31,
-        "pointCount": 6360,
-        "position": {
-          "offset": 315000,
-          "bytes": 1182960,
-          "dtype": "uint16"
-        },
-        "color": {
-          "offset": 1497960,
-          "bytes": 591480,
-          "dtype": "uint8"
-        }
+        "frameCount": 121,
+        "pointCount": 407040,
+        "width": 848,
+        "height": 480,
+        "depthChunks": [
+          {
+            "startFrame": 0,
+            "frameCount": 16,
+            "data": "raw/scene-11-demo-9/depth-000.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 16,
+            "frameCount": 16,
+            "data": "raw/scene-11-demo-9/depth-016.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 32,
+            "frameCount": 16,
+            "data": "raw/scene-11-demo-9/depth-032.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 48,
+            "frameCount": 16,
+            "data": "raw/scene-11-demo-9/depth-048.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 64,
+            "frameCount": 16,
+            "data": "raw/scene-11-demo-9/depth-064.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 80,
+            "frameCount": 16,
+            "data": "raw/scene-11-demo-9/depth-080.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 96,
+            "frameCount": 16,
+            "data": "raw/scene-11-demo-9/depth-096.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 112,
+            "frameCount": 9,
+            "data": "raw/scene-11-demo-9/depth-112.bin",
+            "bytes": 14653440
+          }
+        ]
       },
       "tracks": [
         {
@@ -247,9 +512,9 @@
             40
           ],
           "position": {
-            "offset": 2089440,
-            "bytes": 69378,
-            "dtype": "uint16"
+            "offset": 22673176,
+            "bytes": 541596,
+            "dtype": "float32"
           }
         },
         {
@@ -261,9 +526,9 @@
             255
           ],
           "position": {
-            "offset": 2158818,
-            "bytes": 83328,
-            "dtype": "uint16"
+            "offset": 23214772,
+            "bytes": 650496,
+            "dtype": "float32"
           }
         }
       ],
@@ -302,7 +567,8 @@
           "width": 1920,
           "height": 1080
         }
-      }
+      },
+      "totalBytes": 220872628
     },
     {
       "id": "scene-12-demo-5",
@@ -311,9 +577,9 @@
       "seed": "5",
       "task": "pour_kettle",
       "label": "Pour Kettle",
-      "data": "scene-12-demo-5.bin",
+      "data": "raw/scene-12-demo-5/scene.bin",
       "video": "scene-12-demo-5.mp4",
-      "bytes": 2215548,
+      "bytes": 23761572,
       "bounds": {
         "min": [
           -0.5945379137992859,
@@ -328,65 +594,197 @@
       },
       "frameIndices": [
         0,
+        1,
+        2,
+        3,
         4,
+        5,
+        6,
+        7,
         8,
+        9,
+        10,
+        11,
         12,
+        13,
+        14,
+        15,
         16,
+        17,
+        18,
+        19,
         20,
+        21,
+        22,
+        23,
         24,
+        25,
+        26,
+        27,
         28,
+        29,
+        30,
+        31,
         32,
+        33,
+        34,
+        35,
         36,
+        37,
+        38,
+        39,
         40,
+        41,
+        42,
+        43,
         44,
+        45,
+        46,
+        47,
         48,
+        49,
+        50,
+        51,
         52,
+        53,
+        54,
+        55,
         56,
+        57,
+        58,
+        59,
         60,
+        61,
+        62,
+        63,
         64,
+        65,
+        66,
+        67,
         68,
+        69,
+        70,
+        71,
         72,
+        73,
+        74,
+        75,
         76,
+        77,
+        78,
+        79,
         80,
+        81,
+        82,
+        83,
         84,
+        85,
+        86,
+        87,
         88,
+        89,
+        90,
+        91,
         92,
+        93,
+        94,
+        95,
         96,
+        97,
+        98,
+        99,
         100,
+        101,
+        102,
+        103,
         104,
+        105,
+        106,
+        107,
         108,
+        109,
+        110,
+        111,
         112,
+        113,
+        114,
+        115,
         116,
+        117,
+        118,
+        119,
         120
       ],
       "sourceFrameCount": 121,
       "sourceFps": 24,
       "scene": {
-        "pointCount": 35000,
+        "pointCount": 1513828,
         "position": {
           "offset": 0,
-          "bytes": 210000,
-          "dtype": "uint16"
+          "bytes": 18165936,
+          "dtype": "float32"
         },
         "color": {
-          "offset": 210000,
-          "bytes": 105000,
+          "offset": 18165936,
+          "bytes": 4541484,
           "dtype": "uint8"
         }
       },
       "videoCloud": {
-        "frameCount": 31,
-        "pointCount": 6328,
-        "position": {
-          "offset": 315000,
-          "bytes": 1177008,
-          "dtype": "uint16"
-        },
-        "color": {
-          "offset": 1492008,
-          "bytes": 588504,
-          "dtype": "uint8"
-        }
+        "frameCount": 121,
+        "pointCount": 407040,
+        "width": 848,
+        "height": 480,
+        "depthChunks": [
+          {
+            "startFrame": 0,
+            "frameCount": 16,
+            "data": "raw/scene-12-demo-5/depth-000.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 16,
+            "frameCount": 16,
+            "data": "raw/scene-12-demo-5/depth-016.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 32,
+            "frameCount": 16,
+            "data": "raw/scene-12-demo-5/depth-032.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 48,
+            "frameCount": 16,
+            "data": "raw/scene-12-demo-5/depth-048.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 64,
+            "frameCount": 16,
+            "data": "raw/scene-12-demo-5/depth-064.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 80,
+            "frameCount": 16,
+            "data": "raw/scene-12-demo-5/depth-080.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 96,
+            "frameCount": 16,
+            "data": "raw/scene-12-demo-5/depth-096.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 112,
+            "frameCount": 9,
+            "data": "raw/scene-12-demo-5/depth-112.bin",
+            "bytes": 14653440
+          }
+        ]
       },
       "tracks": [
         {
@@ -398,9 +796,9 @@
             40
           ],
           "position": {
-            "offset": 2080512,
-            "bytes": 61194,
-            "dtype": "uint16"
+            "offset": 22707420,
+            "bytes": 477708,
+            "dtype": "float32"
           }
         },
         {
@@ -412,9 +810,9 @@
             255
           ],
           "position": {
-            "offset": 2141706,
-            "bytes": 73842,
-            "dtype": "uint16"
+            "offset": 23185128,
+            "bytes": 576444,
+            "dtype": "float32"
           }
         }
       ],
@@ -453,7 +851,8 @@
           "width": 1920,
           "height": 1080
         }
-      }
+      },
+      "totalBytes": 220768932
     },
     {
       "id": "scene-13-demo-10",
@@ -462,9 +861,9 @@
       "seed": "10",
       "task": "plate_orange",
       "label": "Plate Orange",
-      "data": "scene-13-demo-10.bin",
+      "data": "raw/scene-13-demo-10/scene.bin",
       "video": "scene-13-demo-10.mp4",
-      "bytes": 2209968,
+      "bytes": 23811452,
       "bounds": {
         "min": [
           -0.6432833671569824,
@@ -479,65 +878,197 @@
       },
       "frameIndices": [
         0,
+        1,
+        2,
+        3,
         4,
+        5,
+        6,
+        7,
         8,
+        9,
+        10,
+        11,
         12,
+        13,
+        14,
+        15,
         16,
+        17,
+        18,
+        19,
         20,
+        21,
+        22,
+        23,
         24,
+        25,
+        26,
+        27,
         28,
+        29,
+        30,
+        31,
         32,
+        33,
+        34,
+        35,
         36,
+        37,
+        38,
+        39,
         40,
+        41,
+        42,
+        43,
         44,
+        45,
+        46,
+        47,
         48,
+        49,
+        50,
+        51,
         52,
+        53,
+        54,
+        55,
         56,
+        57,
+        58,
+        59,
         60,
+        61,
+        62,
+        63,
         64,
+        65,
+        66,
+        67,
         68,
+        69,
+        70,
+        71,
         72,
+        73,
+        74,
+        75,
         76,
+        77,
+        78,
+        79,
         80,
+        81,
+        82,
+        83,
         84,
+        85,
+        86,
+        87,
         88,
+        89,
+        90,
+        91,
         92,
+        93,
+        94,
+        95,
         96,
+        97,
+        98,
+        99,
         100,
+        101,
+        102,
+        103,
         104,
+        105,
+        106,
+        107,
         108,
+        109,
+        110,
+        111,
         112,
+        113,
+        114,
+        115,
         116,
+        117,
+        118,
+        119,
         120
       ],
       "sourceFrameCount": 121,
       "sourceFps": 24,
       "scene": {
-        "pointCount": 35000,
+        "pointCount": 1511926,
         "position": {
           "offset": 0,
-          "bytes": 210000,
-          "dtype": "uint16"
+          "bytes": 18143112,
+          "dtype": "float32"
         },
         "color": {
-          "offset": 210000,
-          "bytes": 105000,
+          "offset": 18143112,
+          "bytes": 4535778,
           "dtype": "uint8"
         }
       },
       "videoCloud": {
-        "frameCount": 31,
-        "pointCount": 6272,
-        "position": {
-          "offset": 315000,
-          "bytes": 1166592,
-          "dtype": "uint16"
-        },
-        "color": {
-          "offset": 1481592,
-          "bytes": 583296,
-          "dtype": "uint8"
-        }
+        "frameCount": 121,
+        "pointCount": 407040,
+        "width": 848,
+        "height": 480,
+        "depthChunks": [
+          {
+            "startFrame": 0,
+            "frameCount": 16,
+            "data": "raw/scene-13-demo-10/depth-000.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 16,
+            "frameCount": 16,
+            "data": "raw/scene-13-demo-10/depth-016.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 32,
+            "frameCount": 16,
+            "data": "raw/scene-13-demo-10/depth-032.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 48,
+            "frameCount": 16,
+            "data": "raw/scene-13-demo-10/depth-048.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 64,
+            "frameCount": 16,
+            "data": "raw/scene-13-demo-10/depth-064.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 80,
+            "frameCount": 16,
+            "data": "raw/scene-13-demo-10/depth-080.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 96,
+            "frameCount": 16,
+            "data": "raw/scene-13-demo-10/depth-096.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 112,
+            "frameCount": 9,
+            "data": "raw/scene-13-demo-10/depth-112.bin",
+            "bytes": 14653440
+          }
+        ]
       },
       "tracks": [
         {
@@ -549,9 +1080,9 @@
             40
           ],
           "position": {
-            "offset": 2064888,
-            "bytes": 68076,
-            "dtype": "uint16"
+            "offset": 22678892,
+            "bytes": 531432,
+            "dtype": "float32"
           }
         },
         {
@@ -563,9 +1094,9 @@
             255
           ],
           "position": {
-            "offset": 2132964,
-            "bytes": 77004,
-            "dtype": "uint16"
+            "offset": 23210324,
+            "bytes": 601128,
+            "dtype": "float32"
           }
         }
       ],
@@ -604,7 +1135,8 @@
           "width": 1920,
           "height": 1080
         }
-      }
+      },
+      "totalBytes": 220818812
     },
     {
       "id": "scene-14-demo-1",
@@ -613,9 +1145,9 @@
       "seed": "3",
       "task": "pile_up_blocks",
       "label": "Pile Up Blocks",
-      "data": "scene-14-demo-1.bin",
+      "data": "raw/scene-14-demo-1/scene.bin",
       "video": "scene-14-demo-1.mp4",
-      "bytes": 2228568,
+      "bytes": 24029508,
       "bounds": {
         "min": [
           -0.5954774022102356,
@@ -630,65 +1162,197 @@
       },
       "frameIndices": [
         0,
+        1,
+        2,
+        3,
         4,
+        5,
+        6,
+        7,
         8,
+        9,
+        10,
+        11,
         12,
+        13,
+        14,
+        15,
         16,
+        17,
+        18,
+        19,
         20,
+        21,
+        22,
+        23,
         24,
+        25,
+        26,
+        27,
         28,
+        29,
+        30,
+        31,
         32,
+        33,
+        34,
+        35,
         36,
+        37,
+        38,
+        39,
         40,
+        41,
+        42,
+        43,
         44,
+        45,
+        46,
+        47,
         48,
+        49,
+        50,
+        51,
         52,
+        53,
+        54,
+        55,
         56,
+        57,
+        58,
+        59,
         60,
+        61,
+        62,
+        63,
         64,
+        65,
+        66,
+        67,
         68,
+        69,
+        70,
+        71,
         72,
+        73,
+        74,
+        75,
         76,
+        77,
+        78,
+        79,
         80,
+        81,
+        82,
+        83,
         84,
+        85,
+        86,
+        87,
         88,
+        89,
+        90,
+        91,
         92,
+        93,
+        94,
+        95,
         96,
+        97,
+        98,
+        99,
         100,
+        101,
+        102,
+        103,
         104,
+        105,
+        106,
+        107,
         108,
+        109,
+        110,
+        111,
         112,
+        113,
+        114,
+        115,
         116,
+        117,
+        118,
+        119,
         120
       ],
       "sourceFrameCount": 121,
       "sourceFps": 24,
       "scene": {
-        "pointCount": 35000,
+        "pointCount": 1511556,
         "position": {
           "offset": 0,
-          "bytes": 210000,
-          "dtype": "uint16"
+          "bytes": 18138672,
+          "dtype": "float32"
         },
         "color": {
-          "offset": 210000,
-          "bytes": 105000,
+          "offset": 18138672,
+          "bytes": 4534668,
           "dtype": "uint8"
         }
       },
       "videoCloud": {
-        "frameCount": 31,
-        "pointCount": 6236,
-        "position": {
-          "offset": 315000,
-          "bytes": 1159896,
-          "dtype": "uint16"
-        },
-        "color": {
-          "offset": 1474896,
-          "bytes": 579948,
-          "dtype": "uint8"
-        }
+        "frameCount": 121,
+        "pointCount": 407040,
+        "width": 848,
+        "height": 480,
+        "depthChunks": [
+          {
+            "startFrame": 0,
+            "frameCount": 16,
+            "data": "raw/scene-14-demo-1/depth-000.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 16,
+            "frameCount": 16,
+            "data": "raw/scene-14-demo-1/depth-016.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 32,
+            "frameCount": 16,
+            "data": "raw/scene-14-demo-1/depth-032.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 48,
+            "frameCount": 16,
+            "data": "raw/scene-14-demo-1/depth-048.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 64,
+            "frameCount": 16,
+            "data": "raw/scene-14-demo-1/depth-064.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 80,
+            "frameCount": 16,
+            "data": "raw/scene-14-demo-1/depth-080.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 96,
+            "frameCount": 16,
+            "data": "raw/scene-14-demo-1/depth-096.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 112,
+            "frameCount": 9,
+            "data": "raw/scene-14-demo-1/depth-112.bin",
+            "bytes": 14653440
+          }
+        ]
       },
       "tracks": [
         {
@@ -700,9 +1364,9 @@
             40
           ],
           "position": {
-            "offset": 2054844,
-            "bytes": 85374,
-            "dtype": "uint16"
+            "offset": 22673340,
+            "bytes": 666468,
+            "dtype": "float32"
           }
         },
         {
@@ -714,9 +1378,9 @@
             255
           ],
           "position": {
-            "offset": 2140218,
-            "bytes": 88350,
-            "dtype": "uint16"
+            "offset": 23339808,
+            "bytes": 689700,
+            "dtype": "float32"
           }
         }
       ],
@@ -755,7 +1419,8 @@
           "width": 1920,
           "height": 1080
         }
-      }
+      },
+      "totalBytes": 221036868
     },
     {
       "id": "scene-17-demo-4",
@@ -764,9 +1429,9 @@
       "seed": "4",
       "task": "stack_bowl",
       "label": "Stack Bowl",
-      "data": "scene-17-demo-4.bin",
+      "data": "raw/scene-17-demo-4/scene.bin",
       "video": "scene-17-demo-4.mp4",
-      "bytes": 2218896,
+      "bytes": 23839932,
       "bounds": {
         "min": [
           -0.5932426452636719,
@@ -781,65 +1446,197 @@
       },
       "frameIndices": [
         0,
+        1,
+        2,
+        3,
         4,
+        5,
+        6,
+        7,
         8,
+        9,
+        10,
+        11,
         12,
+        13,
+        14,
+        15,
         16,
+        17,
+        18,
+        19,
         20,
+        21,
+        22,
+        23,
         24,
+        25,
+        26,
+        27,
         28,
+        29,
+        30,
+        31,
         32,
+        33,
+        34,
+        35,
         36,
+        37,
+        38,
+        39,
         40,
+        41,
+        42,
+        43,
         44,
+        45,
+        46,
+        47,
         48,
+        49,
+        50,
+        51,
         52,
+        53,
+        54,
+        55,
         56,
+        57,
+        58,
+        59,
         60,
+        61,
+        62,
+        63,
         64,
+        65,
+        66,
+        67,
         68,
+        69,
+        70,
+        71,
         72,
+        73,
+        74,
+        75,
         76,
+        77,
+        78,
+        79,
         80,
+        81,
+        82,
+        83,
         84,
+        85,
+        86,
+        87,
         88,
+        89,
+        90,
+        91,
         92,
+        93,
+        94,
+        95,
         96,
+        97,
+        98,
+        99,
         100,
+        101,
+        102,
+        103,
         104,
+        105,
+        106,
+        107,
         108,
+        109,
+        110,
+        111,
         112,
+        113,
+        114,
+        115,
         116,
+        117,
+        118,
+        119,
         120
       ],
       "sourceFrameCount": 121,
       "sourceFps": 24,
       "scene": {
-        "pointCount": 35000,
+        "pointCount": 1511792,
         "position": {
           "offset": 0,
-          "bytes": 210000,
-          "dtype": "uint16"
+          "bytes": 18141504,
+          "dtype": "float32"
         },
         "color": {
-          "offset": 210000,
-          "bytes": 105000,
+          "offset": 18141504,
+          "bytes": 4535376,
           "dtype": "uint8"
         }
       },
       "videoCloud": {
-        "frameCount": 31,
-        "pointCount": 6290,
-        "position": {
-          "offset": 315000,
-          "bytes": 1169940,
-          "dtype": "uint16"
-        },
-        "color": {
-          "offset": 1484940,
-          "bytes": 584970,
-          "dtype": "uint8"
-        }
+        "frameCount": 121,
+        "pointCount": 407040,
+        "width": 848,
+        "height": 480,
+        "depthChunks": [
+          {
+            "startFrame": 0,
+            "frameCount": 16,
+            "data": "raw/scene-17-demo-4/depth-000.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 16,
+            "frameCount": 16,
+            "data": "raw/scene-17-demo-4/depth-016.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 32,
+            "frameCount": 16,
+            "data": "raw/scene-17-demo-4/depth-032.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 48,
+            "frameCount": 16,
+            "data": "raw/scene-17-demo-4/depth-048.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 64,
+            "frameCount": 16,
+            "data": "raw/scene-17-demo-4/depth-064.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 80,
+            "frameCount": 16,
+            "data": "raw/scene-17-demo-4/depth-080.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 96,
+            "frameCount": 16,
+            "data": "raw/scene-17-demo-4/depth-096.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 112,
+            "frameCount": 9,
+            "data": "raw/scene-17-demo-4/depth-112.bin",
+            "bytes": 14653440
+          }
+        ]
       },
       "tracks": [
         {
@@ -851,9 +1648,9 @@
             40
           ],
           "position": {
-            "offset": 2069910,
-            "bytes": 74214,
-            "dtype": "uint16"
+            "offset": 22676880,
+            "bytes": 579348,
+            "dtype": "float32"
           }
         },
         {
@@ -865,9 +1662,9 @@
             255
           ],
           "position": {
-            "offset": 2144124,
-            "bytes": 74772,
-            "dtype": "uint16"
+            "offset": 23256228,
+            "bytes": 583704,
+            "dtype": "float32"
           }
         }
       ],
@@ -906,7 +1703,8 @@
           "width": 1920,
           "height": 1080
         }
-      }
+      },
+      "totalBytes": 220847292
     },
     {
       "id": "scene-19-demo-3",
@@ -915,9 +1713,9 @@
       "seed": "8",
       "task": "close_lid",
       "label": "Close Lid",
-      "data": "scene-19-demo-3.bin",
+      "data": "raw/scene-19-demo-3/scene.bin",
       "video": "scene-19-demo-3.mp4",
-      "bytes": 2216386,
+      "bytes": 23606004,
       "bounds": {
         "min": [
           -0.5596339106559753,
@@ -932,65 +1730,197 @@
       },
       "frameIndices": [
         0,
+        1,
+        2,
+        3,
         4,
+        5,
+        6,
+        7,
         8,
+        9,
+        10,
+        11,
         12,
+        13,
+        14,
+        15,
         16,
+        17,
+        18,
+        19,
         20,
+        21,
+        22,
+        23,
         24,
+        25,
+        26,
+        27,
         28,
+        29,
+        30,
+        31,
         32,
+        33,
+        34,
+        35,
         36,
+        37,
+        38,
+        39,
         40,
+        41,
+        42,
+        43,
         44,
+        45,
+        46,
+        47,
         48,
+        49,
+        50,
+        51,
         52,
+        53,
+        54,
+        55,
         56,
+        57,
+        58,
+        59,
         60,
+        61,
+        62,
+        63,
         64,
+        65,
+        66,
+        67,
         68,
+        69,
+        70,
+        71,
         72,
+        73,
+        74,
+        75,
         76,
+        77,
+        78,
+        79,
         80,
+        81,
+        82,
+        83,
         84,
+        85,
+        86,
+        87,
         88,
+        89,
+        90,
+        91,
         92,
+        93,
+        94,
+        95,
         96,
+        97,
+        98,
+        99,
         100,
+        101,
+        102,
+        103,
         104,
+        105,
+        106,
+        107,
         108,
+        109,
+        110,
+        111,
         112,
+        113,
+        114,
+        115,
         116,
+        117,
+        118,
+        119,
         120
       ],
       "sourceFrameCount": 121,
       "sourceFps": 24,
       "scene": {
-        "pointCount": 35000,
+        "pointCount": 1502876,
         "position": {
           "offset": 0,
-          "bytes": 210000,
-          "dtype": "uint16"
+          "bytes": 18034512,
+          "dtype": "float32"
         },
         "color": {
-          "offset": 210000,
-          "bytes": 105000,
+          "offset": 18034512,
+          "bytes": 4508628,
           "dtype": "uint8"
         }
       },
       "videoCloud": {
-        "frameCount": 31,
-        "pointCount": 6327,
-        "position": {
-          "offset": 315000,
-          "bytes": 1176822,
-          "dtype": "uint16"
-        },
-        "color": {
-          "offset": 1491822,
-          "bytes": 588411,
-          "dtype": "uint8"
-        }
+        "frameCount": 121,
+        "pointCount": 407040,
+        "width": 848,
+        "height": 480,
+        "depthChunks": [
+          {
+            "startFrame": 0,
+            "frameCount": 16,
+            "data": "raw/scene-19-demo-3/depth-000.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 16,
+            "frameCount": 16,
+            "data": "raw/scene-19-demo-3/depth-016.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 32,
+            "frameCount": 16,
+            "data": "raw/scene-19-demo-3/depth-032.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 48,
+            "frameCount": 16,
+            "data": "raw/scene-19-demo-3/depth-048.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 64,
+            "frameCount": 16,
+            "data": "raw/scene-19-demo-3/depth-064.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 80,
+            "frameCount": 16,
+            "data": "raw/scene-19-demo-3/depth-080.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 96,
+            "frameCount": 16,
+            "data": "raw/scene-19-demo-3/depth-096.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 112,
+            "frameCount": 9,
+            "data": "raw/scene-19-demo-3/depth-112.bin",
+            "bytes": 14653440
+          }
+        ]
       },
       "tracks": [
         {
@@ -1002,9 +1932,9 @@
             40
           ],
           "position": {
-            "offset": 2080234,
-            "bytes": 61194,
-            "dtype": "uint16"
+            "offset": 22543140,
+            "bytes": 477708,
+            "dtype": "float32"
           }
         },
         {
@@ -1016,9 +1946,9 @@
             255
           ],
           "position": {
-            "offset": 2141428,
-            "bytes": 74958,
-            "dtype": "uint16"
+            "offset": 23020848,
+            "bytes": 585156,
+            "dtype": "float32"
           }
         }
       ],
@@ -1057,7 +1987,8 @@
           "width": 1920,
           "height": 1080
         }
-      }
+      },
+      "totalBytes": 220613364
     },
     {
       "id": "scene-20-demo-1",
@@ -1066,9 +1997,9 @@
       "seed": "0",
       "task": "pick_up_banana",
       "label": "Pick Up Banana",
-      "data": "scene-20-demo-1.bin",
+      "data": "raw/scene-20-demo-1/scene.bin",
       "video": "scene-20-demo-1.mp4",
-      "bytes": 2244844,
+      "bytes": 24089304,
       "bounds": {
         "min": [
           -0.6207455396652222,
@@ -1083,65 +2014,197 @@
       },
       "frameIndices": [
         0,
+        1,
+        2,
+        3,
         4,
+        5,
+        6,
+        7,
         8,
+        9,
+        10,
+        11,
         12,
+        13,
+        14,
+        15,
         16,
+        17,
+        18,
+        19,
         20,
+        21,
+        22,
+        23,
         24,
+        25,
+        26,
+        27,
         28,
+        29,
+        30,
+        31,
         32,
+        33,
+        34,
+        35,
         36,
+        37,
+        38,
+        39,
         40,
+        41,
+        42,
+        43,
         44,
+        45,
+        46,
+        47,
         48,
+        49,
+        50,
+        51,
         52,
+        53,
+        54,
+        55,
         56,
+        57,
+        58,
+        59,
         60,
+        61,
+        62,
+        63,
         64,
+        65,
+        66,
+        67,
         68,
+        69,
+        70,
+        71,
         72,
+        73,
+        74,
+        75,
         76,
+        77,
+        78,
+        79,
         80,
+        81,
+        82,
+        83,
         84,
+        85,
+        86,
+        87,
         88,
+        89,
+        90,
+        91,
         92,
+        93,
+        94,
+        95,
         96,
+        97,
+        98,
+        99,
         100,
+        101,
+        102,
+        103,
         104,
+        105,
+        106,
+        107,
         108,
+        109,
+        110,
+        111,
         112,
+        113,
+        114,
+        115,
         116,
+        117,
+        118,
+        119,
         120
       ],
       "sourceFrameCount": 121,
       "sourceFps": 24,
       "scene": {
-        "pointCount": 35000,
+        "pointCount": 1504023,
         "position": {
           "offset": 0,
-          "bytes": 210000,
-          "dtype": "uint16"
+          "bytes": 18048276,
+          "dtype": "float32"
         },
         "color": {
-          "offset": 210000,
-          "bytes": 105000,
+          "offset": 18048276,
+          "bytes": 4512069,
           "dtype": "uint8"
         }
       },
       "videoCloud": {
-        "frameCount": 31,
-        "pointCount": 6215,
-        "position": {
-          "offset": 315000,
-          "bytes": 1155990,
-          "dtype": "uint16"
-        },
-        "color": {
-          "offset": 1470990,
-          "bytes": 577995,
-          "dtype": "uint8"
-        }
+        "frameCount": 121,
+        "pointCount": 407040,
+        "width": 848,
+        "height": 480,
+        "depthChunks": [
+          {
+            "startFrame": 0,
+            "frameCount": 16,
+            "data": "raw/scene-20-demo-1/depth-000.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 16,
+            "frameCount": 16,
+            "data": "raw/scene-20-demo-1/depth-016.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 32,
+            "frameCount": 16,
+            "data": "raw/scene-20-demo-1/depth-032.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 48,
+            "frameCount": 16,
+            "data": "raw/scene-20-demo-1/depth-048.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 64,
+            "frameCount": 16,
+            "data": "raw/scene-20-demo-1/depth-064.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 80,
+            "frameCount": 16,
+            "data": "raw/scene-20-demo-1/depth-080.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 96,
+            "frameCount": 16,
+            "data": "raw/scene-20-demo-1/depth-096.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 112,
+            "frameCount": 9,
+            "data": "raw/scene-20-demo-1/depth-112.bin",
+            "bytes": 14653440
+          }
+        ]
       },
       "tracks": [
         {
@@ -1153,9 +2216,9 @@
             40
           ],
           "position": {
-            "offset": 2048986,
-            "bytes": 52266,
-            "dtype": "uint16"
+            "offset": 22560348,
+            "bytes": 408012,
+            "dtype": "float32"
           }
         },
         {
@@ -1167,9 +2230,9 @@
             255
           ],
           "position": {
-            "offset": 2101252,
-            "bytes": 85932,
-            "dtype": "uint16"
+            "offset": 22968360,
+            "bytes": 670824,
+            "dtype": "float32"
           }
         },
         {
@@ -1181,9 +2244,9 @@
             210
           ],
           "position": {
-            "offset": 2187184,
-            "bytes": 57660,
-            "dtype": "uint16"
+            "offset": 23639184,
+            "bytes": 450120,
+            "dtype": "float32"
           }
         }
       ],
@@ -1222,7 +2285,8 @@
           "width": 1920,
           "height": 1080
         }
-      }
+      },
+      "totalBytes": 221096664
     },
     {
       "id": "scene-22-demo-3",
@@ -1231,9 +2295,9 @@
       "seed": "2",
       "task": "cover_bucket",
       "label": "Cover Bucket",
-      "data": "scene-22-demo-3.bin",
+      "data": "raw/scene-22-demo-3/scene.bin",
       "video": "scene-22-demo-3.mp4",
-      "bytes": 2218246,
+      "bytes": 23766432,
       "bounds": {
         "min": [
           -0.548607349395752,
@@ -1248,65 +2312,197 @@
       },
       "frameIndices": [
         0,
+        1,
+        2,
+        3,
         4,
+        5,
+        6,
+        7,
         8,
+        9,
+        10,
+        11,
         12,
+        13,
+        14,
+        15,
         16,
+        17,
+        18,
+        19,
         20,
+        21,
+        22,
+        23,
         24,
+        25,
+        26,
+        27,
         28,
+        29,
+        30,
+        31,
         32,
+        33,
+        34,
+        35,
         36,
+        37,
+        38,
+        39,
         40,
+        41,
+        42,
+        43,
         44,
+        45,
+        46,
+        47,
         48,
+        49,
+        50,
+        51,
         52,
+        53,
+        54,
+        55,
         56,
+        57,
+        58,
+        59,
         60,
+        61,
+        62,
+        63,
         64,
+        65,
+        66,
+        67,
         68,
+        69,
+        70,
+        71,
         72,
+        73,
+        74,
+        75,
         76,
+        77,
+        78,
+        79,
         80,
+        81,
+        82,
+        83,
         84,
+        85,
+        86,
+        87,
         88,
+        89,
+        90,
+        91,
         92,
+        93,
+        94,
+        95,
         96,
+        97,
+        98,
+        99,
         100,
+        101,
+        102,
+        103,
         104,
+        105,
+        106,
+        107,
         108,
+        109,
+        110,
+        111,
         112,
+        113,
+        114,
+        115,
         116,
+        117,
+        118,
+        119,
         120
       ],
       "sourceFrameCount": 121,
       "sourceFps": 24,
       "scene": {
-        "pointCount": 35000,
+        "pointCount": 1506795,
         "position": {
           "offset": 0,
-          "bytes": 210000,
-          "dtype": "uint16"
+          "bytes": 18081540,
+          "dtype": "float32"
         },
         "color": {
-          "offset": 210000,
-          "bytes": 105000,
+          "offset": 18081540,
+          "bytes": 4520385,
           "dtype": "uint8"
         }
       },
       "videoCloud": {
-        "frameCount": 31,
-        "pointCount": 6287,
-        "position": {
-          "offset": 315000,
-          "bytes": 1169382,
-          "dtype": "uint16"
-        },
-        "color": {
-          "offset": 1484382,
-          "bytes": 584691,
-          "dtype": "uint8"
-        }
+        "frameCount": 121,
+        "pointCount": 407040,
+        "width": 848,
+        "height": 480,
+        "depthChunks": [
+          {
+            "startFrame": 0,
+            "frameCount": 16,
+            "data": "raw/scene-22-demo-3/depth-000.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 16,
+            "frameCount": 16,
+            "data": "raw/scene-22-demo-3/depth-016.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 32,
+            "frameCount": 16,
+            "data": "raw/scene-22-demo-3/depth-032.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 48,
+            "frameCount": 16,
+            "data": "raw/scene-22-demo-3/depth-048.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 64,
+            "frameCount": 16,
+            "data": "raw/scene-22-demo-3/depth-064.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 80,
+            "frameCount": 16,
+            "data": "raw/scene-22-demo-3/depth-080.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 96,
+            "frameCount": 16,
+            "data": "raw/scene-22-demo-3/depth-096.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 112,
+            "frameCount": 9,
+            "data": "raw/scene-22-demo-3/depth-112.bin",
+            "bytes": 14653440
+          }
+        ]
       },
       "tracks": [
         {
@@ -1318,9 +2514,9 @@
             40
           ],
           "position": {
-            "offset": 2069074,
-            "bytes": 73470,
-            "dtype": "uint16"
+            "offset": 22601928,
+            "bytes": 573540,
+            "dtype": "float32"
           }
         },
         {
@@ -1332,9 +2528,9 @@
             255
           ],
           "position": {
-            "offset": 2142544,
-            "bytes": 75702,
-            "dtype": "uint16"
+            "offset": 23175468,
+            "bytes": 590964,
+            "dtype": "float32"
           }
         }
       ],
@@ -1373,7 +2569,8 @@
           "width": 1920,
           "height": 1080
         }
-      }
+      },
+      "totalBytes": 220773792
     },
     {
       "id": "scene-25-demo-9",
@@ -1382,9 +2579,9 @@
       "seed": "18",
       "task": "toast_bread",
       "label": "Toast Bread",
-      "data": "scene-25-demo-9.bin",
+      "data": "raw/scene-25-demo-9/scene.bin",
       "video": "scene-25-demo-9.mp4",
-      "bytes": 2166166,
+      "bytes": 23872104,
       "bounds": {
         "min": [
           -0.5570681691169739,
@@ -1399,65 +2596,197 @@
       },
       "frameIndices": [
         0,
+        1,
+        2,
+        3,
         4,
+        5,
+        6,
+        7,
         8,
+        9,
+        10,
+        11,
         12,
+        13,
+        14,
+        15,
         16,
+        17,
+        18,
+        19,
         20,
+        21,
+        22,
+        23,
         24,
+        25,
+        26,
+        27,
         28,
+        29,
+        30,
+        31,
         32,
+        33,
+        34,
+        35,
         36,
+        37,
+        38,
+        39,
         40,
+        41,
+        42,
+        43,
         44,
+        45,
+        46,
+        47,
         48,
+        49,
+        50,
+        51,
         52,
+        53,
+        54,
+        55,
         56,
+        57,
+        58,
+        59,
         60,
+        61,
+        62,
+        63,
         64,
+        65,
+        66,
+        67,
         68,
+        69,
+        70,
+        71,
         72,
+        73,
+        74,
+        75,
         76,
+        77,
+        78,
+        79,
         80,
+        81,
+        82,
+        83,
         84,
+        85,
+        86,
+        87,
         88,
+        89,
+        90,
+        91,
         92,
+        93,
+        94,
+        95,
         96,
+        97,
+        98,
+        99,
         100,
+        101,
+        102,
+        103,
         104,
+        105,
+        106,
+        107,
         108,
+        109,
+        110,
+        111,
         112,
+        113,
+        114,
+        115,
         116,
+        117,
+        118,
+        119,
         120
       ],
       "sourceFrameCount": 121,
       "sourceFps": 24,
       "scene": {
-        "pointCount": 35000,
+        "pointCount": 1509871,
         "position": {
           "offset": 0,
-          "bytes": 210000,
-          "dtype": "uint16"
+          "bytes": 18118452,
+          "dtype": "float32"
         },
         "color": {
-          "offset": 210000,
-          "bytes": 105000,
+          "offset": 18118452,
+          "bytes": 4529613,
           "dtype": "uint8"
         }
       },
       "videoCloud": {
-        "frameCount": 31,
-        "pointCount": 6073,
-        "position": {
-          "offset": 315000,
-          "bytes": 1129578,
-          "dtype": "uint16"
-        },
-        "color": {
-          "offset": 1444578,
-          "bytes": 564789,
-          "dtype": "uint8"
-        }
+        "frameCount": 121,
+        "pointCount": 407040,
+        "width": 848,
+        "height": 480,
+        "depthChunks": [
+          {
+            "startFrame": 0,
+            "frameCount": 16,
+            "data": "raw/scene-25-demo-9/depth-000.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 16,
+            "frameCount": 16,
+            "data": "raw/scene-25-demo-9/depth-016.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 32,
+            "frameCount": 16,
+            "data": "raw/scene-25-demo-9/depth-032.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 48,
+            "frameCount": 16,
+            "data": "raw/scene-25-demo-9/depth-048.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 64,
+            "frameCount": 16,
+            "data": "raw/scene-25-demo-9/depth-064.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 80,
+            "frameCount": 16,
+            "data": "raw/scene-25-demo-9/depth-080.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 96,
+            "frameCount": 16,
+            "data": "raw/scene-25-demo-9/depth-096.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 112,
+            "frameCount": 9,
+            "data": "raw/scene-25-demo-9/depth-112.bin",
+            "bytes": 14653440
+          }
+        ]
       },
       "tracks": [
         {
@@ -1469,9 +2798,9 @@
             40
           ],
           "position": {
-            "offset": 2009368,
-            "bytes": 71610,
-            "dtype": "uint16"
+            "offset": 22648068,
+            "bytes": 559020,
+            "dtype": "float32"
           }
         },
         {
@@ -1483,9 +2812,9 @@
             255
           ],
           "position": {
-            "offset": 2080978,
-            "bytes": 85188,
-            "dtype": "uint16"
+            "offset": 23207088,
+            "bytes": 665016,
+            "dtype": "float32"
           }
         }
       ],
@@ -1524,7 +2853,8 @@
           "width": 1920,
           "height": 1080
         }
-      }
+      },
+      "totalBytes": 220879464
     },
     {
       "id": "scene-26-demo-1",
@@ -1533,9 +2863,9 @@
       "seed": "0",
       "task": "pour_cup",
       "label": "Pour Cup",
-      "data": "scene-26-demo-1.bin",
+      "data": "raw/scene-26-demo-1/scene.bin",
       "video": "scene-26-demo-1.mp4",
-      "bytes": 2233404,
+      "bytes": 23805676,
       "bounds": {
         "min": [
           -0.5847601890563965,
@@ -1550,65 +2880,197 @@
       },
       "frameIndices": [
         0,
+        1,
+        2,
+        3,
         4,
+        5,
+        6,
+        7,
         8,
+        9,
+        10,
+        11,
         12,
+        13,
+        14,
+        15,
         16,
+        17,
+        18,
+        19,
         20,
+        21,
+        22,
+        23,
         24,
+        25,
+        26,
+        27,
         28,
+        29,
+        30,
+        31,
         32,
+        33,
+        34,
+        35,
         36,
+        37,
+        38,
+        39,
         40,
+        41,
+        42,
+        43,
         44,
+        45,
+        46,
+        47,
         48,
+        49,
+        50,
+        51,
         52,
+        53,
+        54,
+        55,
         56,
+        57,
+        58,
+        59,
         60,
+        61,
+        62,
+        63,
         64,
+        65,
+        66,
+        67,
         68,
+        69,
+        70,
+        71,
         72,
+        73,
+        74,
+        75,
         76,
+        77,
+        78,
+        79,
         80,
+        81,
+        82,
+        83,
         84,
+        85,
+        86,
+        87,
         88,
+        89,
+        90,
+        91,
         92,
+        93,
+        94,
+        95,
         96,
+        97,
+        98,
+        99,
         100,
+        101,
+        102,
+        103,
         104,
+        105,
+        106,
+        107,
         108,
+        109,
+        110,
+        111,
         112,
+        113,
+        114,
+        115,
         116,
+        117,
+        118,
+        119,
         120
       ],
       "sourceFrameCount": 121,
       "sourceFps": 24,
       "scene": {
-        "pointCount": 35000,
+        "pointCount": 1510089,
         "position": {
           "offset": 0,
-          "bytes": 210000,
-          "dtype": "uint16"
+          "bytes": 18121068,
+          "dtype": "float32"
         },
         "color": {
-          "offset": 210000,
-          "bytes": 105000,
+          "offset": 18121068,
+          "bytes": 4530267,
           "dtype": "uint8"
         }
       },
       "videoCloud": {
-        "frameCount": 31,
-        "pointCount": 6346,
-        "position": {
-          "offset": 315000,
-          "bytes": 1180356,
-          "dtype": "uint16"
-        },
-        "color": {
-          "offset": 1495356,
-          "bytes": 590178,
-          "dtype": "uint8"
-        }
+        "frameCount": 121,
+        "pointCount": 407040,
+        "width": 848,
+        "height": 480,
+        "depthChunks": [
+          {
+            "startFrame": 0,
+            "frameCount": 16,
+            "data": "raw/scene-26-demo-1/depth-000.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 16,
+            "frameCount": 16,
+            "data": "raw/scene-26-demo-1/depth-016.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 32,
+            "frameCount": 16,
+            "data": "raw/scene-26-demo-1/depth-032.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 48,
+            "frameCount": 16,
+            "data": "raw/scene-26-demo-1/depth-048.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 64,
+            "frameCount": 16,
+            "data": "raw/scene-26-demo-1/depth-064.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 80,
+            "frameCount": 16,
+            "data": "raw/scene-26-demo-1/depth-080.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 96,
+            "frameCount": 16,
+            "data": "raw/scene-26-demo-1/depth-096.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 112,
+            "frameCount": 9,
+            "data": "raw/scene-26-demo-1/depth-112.bin",
+            "bytes": 14653440
+          }
+        ]
       },
       "tracks": [
         {
@@ -1620,9 +3082,9 @@
             40
           ],
           "position": {
-            "offset": 2085534,
-            "bytes": 71610,
-            "dtype": "uint16"
+            "offset": 22651336,
+            "bytes": 559020,
+            "dtype": "float32"
           }
         },
         {
@@ -1634,9 +3096,9 @@
             255
           ],
           "position": {
-            "offset": 2157144,
-            "bytes": 76260,
-            "dtype": "uint16"
+            "offset": 23210356,
+            "bytes": 595320,
+            "dtype": "float32"
           }
         }
       ],
@@ -1675,7 +3137,8 @@
           "width": 1920,
           "height": 1080
         }
-      }
+      },
+      "totalBytes": 220813036
     },
     {
       "id": "scene-27-demo-8",
@@ -1684,9 +3147,9 @@
       "seed": "11",
       "task": "draw_on_whiteboard",
       "label": "Draw On Whiteboard",
-      "data": "scene-27-demo-8.bin",
+      "data": "raw/scene-27-demo-8/scene.bin",
       "video": "scene-27-demo-8.mp4",
-      "bytes": 2169978,
+      "bytes": 23471152,
       "bounds": {
         "min": [
           -0.5490719079971313,
@@ -1701,65 +3164,197 @@
       },
       "frameIndices": [
         0,
+        1,
+        2,
+        3,
         4,
+        5,
+        6,
+        7,
         8,
+        9,
+        10,
+        11,
         12,
+        13,
+        14,
+        15,
         16,
+        17,
+        18,
+        19,
         20,
+        21,
+        22,
+        23,
         24,
+        25,
+        26,
+        27,
         28,
+        29,
+        30,
+        31,
         32,
+        33,
+        34,
+        35,
         36,
+        37,
+        38,
+        39,
         40,
+        41,
+        42,
+        43,
         44,
+        45,
+        46,
+        47,
         48,
+        49,
+        50,
+        51,
         52,
+        53,
+        54,
+        55,
         56,
+        57,
+        58,
+        59,
         60,
+        61,
+        62,
+        63,
         64,
+        65,
+        66,
+        67,
         68,
+        69,
+        70,
+        71,
         72,
+        73,
+        74,
+        75,
         76,
+        77,
+        78,
+        79,
         80,
+        81,
+        82,
+        83,
         84,
+        85,
+        86,
+        87,
         88,
+        89,
+        90,
+        91,
         92,
+        93,
+        94,
+        95,
         96,
+        97,
+        98,
+        99,
         100,
+        101,
+        102,
+        103,
         104,
+        105,
+        106,
+        107,
         108,
+        109,
+        110,
+        111,
         112,
+        113,
+        114,
+        115,
         116,
+        117,
+        118,
+        119,
         120
       ],
       "sourceFrameCount": 121,
       "sourceFps": 24,
       "scene": {
-        "pointCount": 35000,
+        "pointCount": 1512665,
         "position": {
           "offset": 0,
-          "bytes": 210000,
-          "dtype": "uint16"
+          "bytes": 18151980,
+          "dtype": "float32"
         },
         "color": {
-          "offset": 210000,
-          "bytes": 105000,
+          "offset": 18151980,
+          "bytes": 4537995,
           "dtype": "uint8"
         }
       },
       "videoCloud": {
-        "frameCount": 31,
-        "pointCount": 6290,
-        "position": {
-          "offset": 315000,
-          "bytes": 1169940,
-          "dtype": "uint16"
-        },
-        "color": {
-          "offset": 1484940,
-          "bytes": 584970,
-          "dtype": "uint8"
-        }
+        "frameCount": 121,
+        "pointCount": 407040,
+        "width": 848,
+        "height": 480,
+        "depthChunks": [
+          {
+            "startFrame": 0,
+            "frameCount": 16,
+            "data": "raw/scene-27-demo-8/depth-000.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 16,
+            "frameCount": 16,
+            "data": "raw/scene-27-demo-8/depth-016.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 32,
+            "frameCount": 16,
+            "data": "raw/scene-27-demo-8/depth-032.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 48,
+            "frameCount": 16,
+            "data": "raw/scene-27-demo-8/depth-048.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 64,
+            "frameCount": 16,
+            "data": "raw/scene-27-demo-8/depth-064.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 80,
+            "frameCount": 16,
+            "data": "raw/scene-27-demo-8/depth-080.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 96,
+            "frameCount": 16,
+            "data": "raw/scene-27-demo-8/depth-096.bin",
+            "bytes": 26050560
+          },
+          {
+            "startFrame": 112,
+            "frameCount": 9,
+            "data": "raw/scene-27-demo-8/depth-112.bin",
+            "bytes": 14653440
+          }
+        ]
       },
       "tracks": [
         {
@@ -1771,9 +3366,9 @@
             40
           ],
           "position": {
-            "offset": 2069910,
-            "bytes": 21948,
-            "dtype": "uint16"
+            "offset": 22689976,
+            "bytes": 171336,
+            "dtype": "float32"
           }
         },
         {
@@ -1785,9 +3380,9 @@
             255
           ],
           "position": {
-            "offset": 2091858,
-            "bytes": 78120,
-            "dtype": "uint16"
+            "offset": 22861312,
+            "bytes": 609840,
+            "dtype": "float32"
           }
         }
       ],
@@ -1826,7 +3421,8 @@
           "width": 1920,
           "height": 1080
         }
-      }
+      },
+      "totalBytes": 220478512
     }
   ]
 }
